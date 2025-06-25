@@ -1,6 +1,6 @@
 import App from "./App.jsx";
 import { Home } from "./components/Home/Home.jsx";
-import { Shop } from "./components/Shop.jsx";
+import { Shop } from "./components/Shop/Shop.jsx";
 import { Error } from "./components/Error.jsx";
 
 export const routes = [

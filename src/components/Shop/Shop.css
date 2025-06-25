@@ -1,0 +1,116 @@
+.shop-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  max-width: 1300px;
+  margin: 2rem auto;
+  padding: 0;
+  align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+  .shop-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .shop-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+}
+
+.movie-card {
+  background-color: #e8e9eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(49, 54, 56, 0.15);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  overflow: hidden;
+  padding: 0;
+  height: auto;
+}
+
+.movie-poster {
+  width: 100%;
+  border-radius: 0;
+  object-fit: cover;
+  display: block;
+}
+
+.movie-title {
+  margin: 0.8rem 0 0.3rem;
+  color: #313638;
+  font-size: 1.2rem;
+  padding: 0 0.5rem;
+}
+
+.movie-info {
+  margin: 0 0 0.8rem;
+  color: #f06543;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.movie-description {
+  font-size: 0.9rem;
+  color: #313638;
+  padding: 0 0.5rem;
+  margin-bottom: 0.3rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.movie-card.expanded .movie-description {
+  -webkit-line-clamp: unset;
+  display: block;
+  max-height: none;
+}
+
+.see-more-btn {
+  background: none;
+  border: none;
+  color: #f06543;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.bottom-content {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie-price {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #313638;
+  margin-bottom: 1rem;
+}
+
+.add-to-cart {
+  background-color: #f06543;
+  color: white;
+  border: none;
+  border-radius: 0 0 12px 12px;
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.add-to-cart:hover {
+  background-color: #f09d51;
+}
