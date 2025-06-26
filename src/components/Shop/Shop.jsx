@@ -1,35 +1,38 @@
-// Shop.jsx
 import React, { useEffect, useState } from "react";
 import { getMovies } from "../../api/getMovies";
+import { AddToCartModal } from "../Modal/AddToCartModal";
 import "./Shop.css";
 
-export function Shop({ cart, setCart }) {
+export function Shop() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [expanded, setExpanded] = useState({});
   const [quantities, setQuantities] = useState({});
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    getMovies()
-      .then((data) => {
-        setMovies(data);
-        const initialQuantities = {};
-        data.forEach((movie) => {
-          initialQuantities[movie.id] = 1;
-        });
-        setQuantities(initialQuantities);
-      })
-      .finally(() => setLoading(false));
+    const fetchMovies = async () => {
+      const moviesData = await getMovies();
+      setMovies(moviesData);
+      const initialQuantities = {};
+      moviesData.forEach((movie) => {
+        initialQuantities[movie.id] = 1;
+      });
+      setQuantities(initialQuantities);
+      setLoading(false);
+    };
+
+    fetchMovies();
   }, []);
 
   const toggleExpand = (id) => {
     setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
-  const increment = (id, stock) => {
+  const increment = (id) => {
     setQuantities((prev) => ({
       ...prev,
-      [id]: Math.min(prev[id] + 1, stock),
+      [id]: prev[id] + 1,
     }));
   };
 
@@ -40,33 +43,34 @@ export function Shop({ cart, setCart }) {
     }));
   };
 
-  const addToCart = (movie, quantity) => {
-    setCart((prevCart) => {
-      const existingItem = prevCart.find((item) => item.id === movie.id);
-      let updatedCart;
-      if (existingItem) {
-        updatedCart = prevCart.map((item) =>
-          item.id === movie.id
-            ? { ...item, quantity: item.quantity + quantity }
-            : item
-        );
-      } else {
-        updatedCart = [...prevCart, { ...movie, quantity }];
-      }
-      localStorage.setItem("cart", JSON.stringify(updatedCart));
-      return updatedCart;
-    });
-  };
-
-  const handleAddToCart = (movie) => {
+  const addToCart = (movie) => {
     const quantity = quantities[movie.id] || 1;
-    addToCart(movie, quantity);
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    const existingItem = cart.find((item) => item.id === movie.id);
+
+    let updatedCart;
+    if (existingItem) {
+      updatedCart = cart.map((item) =>
+        item.id === movie.id
+          ? { ...item, quantity: item.quantity + quantity }
+          : item
+      );
+    } else {
+      updatedCart = [...cart, { ...movie, quantity }];
+    }
+
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    window.dispatchEvent(new Event("cartUpdated"));
+
+    setShowModal(true);
+    setTimeout(() => setShowModal(false), 2000);
   };
 
   if (loading) return <p>Loading movies...</p>;
 
   return (
     <div className="shop-container">
+      <AddToCartModal visible={showModal} />
       {movies.map((movie) => {
         const isExpanded = expanded[movie.id];
         const quantity = quantities[movie.id] || 1;
@@ -94,19 +98,13 @@ export function Shop({ cart, setCart }) {
               {isExpanded ? "See Less" : "See More"}
             </button>
             <div className="bottom-content">
-              <p className="movie-stock">{movie.stock} copies in stock</p>
               <div className="quantity-selector">
                 <button onClick={() => decrement(movie.id)}>-</button>
                 <span>{quantity}</span>
-                <button onClick={() => increment(movie.id, movie.stock)}>
-                  +
-                </button>
+                <button onClick={() => increment(movie.id)}>+</button>
               </div>
               <p className="movie-price">{movie.price} €</p>
-              <button
-                className="add-to-cart"
-                onClick={() => handleAddToCart(movie)}
-              >
+              <button className="add-to-cart" onClick={() => addToCart(movie)}>
                 Add to Cart
               </button>
             </div>

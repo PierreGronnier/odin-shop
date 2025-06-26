@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import caddie from "../../assets/caddie.png";
 
 export function Navbar() {
+  const [cartCount, setCartCount] = useState(0);
+
+  useEffect(() => {
+    const updateCartCount = () => {
+      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+      const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+      setCartCount(totalCount);
+    };
+
+    updateCartCount();
+
+    window.addEventListener("cartUpdated", updateCartCount);
+
+    return () => {
+      window.removeEventListener("cartUpdated", updateCartCount);
+    };
+  }, []);
+
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src="/grow-shop.png" alt="Shop logo" />
+        <Link to="/">
+          <img src="/cinema-logo.png" alt="Shop logo" />
+        </Link>
         <h1 className="navbar-title">Odin Shop</h1>
       </div>
       <ul className="navbar-links">
@@ -19,7 +39,10 @@ export function Navbar() {
         </li>
       </ul>
       <div className="navbar-cart">
-        <img src={caddie} alt="Cart" />
+        <Link to="/cart" className="cart-link">
+          <img src={caddie} alt="Cart" />
+          {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+        </Link>
       </div>
     </nav>
   );
