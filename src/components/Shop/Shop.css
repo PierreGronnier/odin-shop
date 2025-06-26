@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+
 .shop-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -45,7 +47,8 @@
 .movie-title {
   margin: 0.8rem 0 0.3rem;
   color: #313638;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-family: "Oswald", sans-serif;
   padding: 0 0.5rem;
 }
 
@@ -113,4 +116,41 @@
 
 .add-to-cart:hover {
   background-color: #f09d51;
+}
+
+.movie-stock {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.3rem;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.7rem;
+  gap: 10px;
+}
+
+.quantity-selector button {
+  background-color: #f06543;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.quantity-selector button:hover {
+  background-color: #f09d51;
+}
+
+.quantity-selector span {
+  font-size: 1rem;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
 }
