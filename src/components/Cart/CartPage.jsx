@@ -41,11 +41,13 @@ export function CartPage() {
           <ul>
             {cartItems.map((item) => (
               <li key={item.id} className="cart-item">
-                <img
-                  src={item.poster}
-                  alt={item.title}
-                  className="cart-item-poster"
-                />
+                <Link to={`/movie/${item.id}`}>
+                  <img
+                    src={item.poster}
+                    alt={item.title}
+                    className="cart-item-poster"
+                  />
+                </Link>
                 <div className="cart-item-details">
                   <h3>{item.title}</h3>
                   <p>

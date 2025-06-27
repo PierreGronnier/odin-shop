@@ -35,6 +35,12 @@
   overflow: hidden;
   padding: 0;
   height: auto;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.03);
+  z-index: 1;
 }
 
 .movie-poster {

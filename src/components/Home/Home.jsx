@@ -10,7 +10,7 @@ export function Home() {
         <p>
           Welcome to Odin Shop, where you can "buy" some of my favorite movies.
           A non-exhaustive selection of films I personally love and would
-          recommend. Highlighted today, one of my beloved movies and a
+          recommend. Highlighted here, one of my all-time favorite and a
           remarkable film. <strong>Perfect Days</strong> by Wim Wenders, a
           poetic journey through the heart of Tokyo, capturing the beauty of
           nature and everyday life. And one of the best performances of Koji

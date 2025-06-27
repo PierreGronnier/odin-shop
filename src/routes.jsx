@@ -3,6 +3,7 @@ import { Home } from "./components/Home/Home.jsx";
 import { Shop } from "./components/Shop/Shop.jsx";
 import { CartPage } from "./components/Cart/CartPage.jsx";
 import { Error } from "./components/Error.jsx";
+import MoviePage from "./components/MoviePage/MoviePage.jsx";
 
 export const routes = [
   {
@@ -21,6 +22,10 @@ export const routes = [
       {
         path: "/cart",
         element: <CartPage />,
+      },
+      {
+        path: "/movie/:id",
+        element: <MoviePage />,
       },
     ],
   },
