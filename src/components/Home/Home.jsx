@@ -8,7 +8,7 @@ export function Home() {
       <section className="intro">
         <h2>Experience Absolute Cinema</h2>
         <p>
-          Welcome to Odin Shop, where you can "buy" some of my favorite movies.
+          Welcome to Ciné Shop, where you can "buy" some of my favorite movies.
           A non-exhaustive selection of films I personally love and would
           recommend. Highlighted here, one of my all-time favorite and a
           remarkable film. <strong>Perfect Days</strong> by Wim Wenders, a

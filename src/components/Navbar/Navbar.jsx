@@ -29,7 +29,7 @@ export function Navbar() {
         <Link to="/">
           <img src="/cinema-logo.png" alt="Shop logo" />
         </Link>
-        <h1 className="navbar-title">Odin Shop</h1>
+        <h1 className="navbar-title">Ciné Shop</h1>
         <a
           href="https://github.com/PierreGronnier"
           target="_blank"

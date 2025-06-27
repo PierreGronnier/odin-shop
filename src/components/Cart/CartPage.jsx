@@ -70,7 +70,7 @@ export function CartPage() {
 
             <div className="right-footer">
               <h2 className="cart-total">Total: {totalPrice.toFixed(2)} €</h2>
-              <button className="place-order-button">Place Order</button>
+              <button className="place-order-button">Checkout</button>
             </div>
           </div>
         </>
