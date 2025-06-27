@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -5,6 +7,7 @@
   padding: 1rem 2rem;
   background-color: #313638;
   flex-wrap: wrap;
+  font-family: "Oswald", sans-serif;
 }
 
 .navbar-logo {
