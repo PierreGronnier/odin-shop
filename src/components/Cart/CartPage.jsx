@@ -19,6 +19,13 @@ export function CartPage() {
     window.dispatchEvent(new Event("cartUpdated"));
   };
 
+  const handleCheckout = () => {
+    setCartItems([]);
+    localStorage.setItem("cart", JSON.stringify([]));
+    window.dispatchEvent(new Event("cartUpdated"));
+    alert("Thank you for your purchase!");
+  };
+
   const totalPrice = cartItems.reduce((total, item) => {
     return total + parseFloat(item.price) * item.quantity;
   }, 0);
@@ -70,7 +77,9 @@ export function CartPage() {
 
             <div className="right-footer">
               <h2 className="cart-total">Total: {totalPrice.toFixed(2)} €</h2>
-              <button className="place-order-button">Checkout</button>
+              <button className="place-order-button" onClick={handleCheckout}>
+                Checkout
+              </button>
             </div>
           </div>
         </>
