@@ -2,8 +2,9 @@
 
 This project is part of The Odin Project's curriculum, specifically from the [Shopping Cart lesson](https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart). It is a mock e-commerce site where users can browse and interact with a shopping cart, but no actual purchases can be made.
 
-## Project Overview
+## Project Overview and Preview
 
+You can see a preview of the [website](https://cine-shop.netlify.app/shop).
 Odin Shop is a simple e-commerce platform that showcases a collection of some of my favorite movies. The site allows users to:
 
 - Browse a selection of movies.
