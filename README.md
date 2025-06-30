@@ -4,7 +4,7 @@ This project is part of The Odin Project's curriculum, specifically from the [Sh
 
 ## Project Overview
 
-Odin Shop is a simple e-commerce platform that showcases a collection of my favorite movies. The site allows users to:
+Odin Shop is a simple e-commerce platform that showcases a collection of some of my favorite movies. The site allows users to:
 
 - Browse a selection of movies.
 - View detailed information about each movie.
