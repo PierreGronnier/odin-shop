@@ -1,12 +1,36 @@
-# React + Vite
+# Odin Shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is part of The Odin Project's curriculum, specifically from the [Shopping Cart lesson](https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart). It is a mock e-commerce site where users can browse and interact with a shopping cart, but no actual purchases can be made.
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Odin Shop is a simple e-commerce platform that showcases a collection of my favorite movies. The site allows users to:
 
-## Expanding the ESLint configuration
+- Browse a selection of movies.
+- View detailed information about each movie.
+- Add movies to a shopping cart (Can be only one copie of the movie or multiple).
+- View and manage the contents of their cart.
+- Proceed through a mock checkout process.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+- **Movie Browsing**: Users can browse through a curated list of movies.
+- **Movie Details**: Click on any movie to see more detailed information, including the director, cast, and a brief synopsis.
+- **Shopping**: Users can add movies to their cart and adjust quantities and click to the movie poster or title to have access to movie detail.
+- **Cart** Users can see all movies added to his cart, with the quantity requested for each movie. He can see the total price and can click for a mock checkout process.
+
+## Technologies Used
+
+- React: For building the user interface.
+- Vite: For fast development builds.
+- React Router: For handling navigation within the app.
+- Local Storage: For simulating a backend by storing cart information.
+
+## Setup
+
+To run this project locally:
+
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Install the necessary dependencies using `npm install`.
+4. Start the development server with `npm run dev`.
