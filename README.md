@@ -4,7 +4,7 @@ This project is part of The Odin Project's curriculum, specifically from the [Sh
 
 ## Project Overview and Preview
 
-You can see a preview of the website [here](https://cine-shop.netlify.app/shop).  
+You can see a preview of the website [here](https://cine-shop.netlify.app).  
 Odin Shop is a simple e-commerce platform that showcases a collection of some of my favorite movies. The site allows users to:
 
 - Browse a selection of movies.
