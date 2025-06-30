@@ -17,7 +17,7 @@ Odin Shop is a simple e-commerce platform that showcases a collection of some of
 - **Movie Browsing**: Users can browse through a curated list of movies.
 - **Movie Details**: Click on any movie to see more detailed information, including the director, cast, and a brief synopsis.
 - **Shopping**: Users can add movies to their cart and adjust quantities and click to the movie poster or title to have access to movie detail.
-- **Cart** Users can see all movies added to his cart, with the quantity requested for each movie. He can see the total price and can click for a mock checkout process.
+- **Cart:** Users can see all movies added to his cart, with the quantity requested for each movie. He can see the total price and can click for a mock checkout process.
 
 ## Technologies Used
 
