@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import styles from "./MoviePage.module.css";
 
 export default function MoviePage() {
@@ -39,11 +39,16 @@ export default function MoviePage() {
 
       <div className={styles["content-wrapper"]}>
         <div className={styles["movie-content"]}>
-          <img
-            className={styles["movie-poster"]}
-            src={movie.poster}
-            alt={movie.title || "undefined"}
-          />
+          <div className={styles["poster-and-button"]}>
+            <img
+              className={styles["movie-poster"]}
+              src={movie.poster}
+              alt={movie.title || "undefined"}
+            />
+            <Link to="/shop" className={styles["shop-button"]}>
+              Back to Shop ←
+            </Link>
+          </div>
 
           <div className={styles["movie-info"]}>
             <div className={styles["title-director-container"]}>

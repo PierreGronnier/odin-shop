@@ -83,14 +83,14 @@ const posterAlternativeIndexes = {
 };
 
 const backdropAlternativeIndexes = {
-  976893: 5,
+  976893: 53,
   531428: 19,
   128: 14,
   108: 54,
   109: 2,
   1574: 1,
   68718: 1,
-  414906: 6,
+  414906: 3,
   290098: 3,
   10494: 18,
   264644: 4,
